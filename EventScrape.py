@@ -73,6 +73,8 @@ def scrapeEntries(formName, daysToScrape):
 				#Replace Field#Date with the field number associated with the date
 				#Replace Field#Fname and Field#Lname with the field numbers associated with
 				#first and last name respectively.
+				#You need to change the format (ex. "%A, %B %d, %Y") to match how the date is written in your wufoo form. 
+				#These formatting directives can be found at https://docs.python.org/2/library/datetime.html#strftime-strptime-behavior
 				registerDate = datetime.datetime(*time.strptime(x["Field#Date"],"%A, %B %d, %Y")[:6])
 				print x["Field#Fname"] + " " + x["Field#Lname"]
 
